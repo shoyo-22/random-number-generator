@@ -1,5 +1,10 @@
 const generateForm = document.getElementById("generateForm");
 const outputField = document.getElementById("output");
+const toggleThemeBtn = document.getElementById("toggle-theme");
+
+const state = {
+  darkMode: false,
+};
 
 generateForm.onsubmit = (event) => {
   event.preventDefault();
@@ -11,6 +16,12 @@ generateForm.onsubmit = (event) => {
   const randomNumber = generateRandomNumber(maxValue, minValue);
   outputField.textContent = `Random Number: ${randomNumber}`;
 };
+
+toggleThemeBtn.onclick = () => {
+  state.darkMode = !state.darkMode;
+  let theme = state.darkMode ? "Light" : "Dark";
+  toggleThemeBtn.textContent = theme;
+}
 
 function generateRandomNumber(max, min) {
   return Math.floor(min + Math.random() * (max - min + 1));
