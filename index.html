@@ -15,16 +15,24 @@
     <main>
       <form id="generateForm">
         <div class="inputs">
-          <input type="number" placeholder="From"/>
-          <input type="number" placeholder="To">
+          <input
+            type="number"
+            name="lower_limit"
+            step="0.01"
+            placeholder="Lower Limit"
+          />
+          <input
+            type="number"
+            name="upper_limit"
+            step="0.01"
+            placeholder="Upper Limit"
+          />
         </div>
         <button type="submit" class="btn-primary">Generate</button>
       </form>
     </main>
     <footer>
-      <div id="output">
-        Output:
-      </div>
+      <div id="output">Random Number:</div>
     </footer>
     <script src="./main.js" type="module" defer></script>
   </body>
