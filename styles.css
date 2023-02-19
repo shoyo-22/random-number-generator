@@ -12,12 +12,48 @@
   --gray-200: #e5e7eb;
   --gray-300: #d1d5db;
   --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2a37;
+  --gray-900: #111928;
 
   --blue-200: #c3ddfd;
 
   --red-200: #fbd5d5;
   --red-700: #c81e1e;
   --red-800: #9b1c1c;
+}
+
+:root.light {
+  --bg-color: var(--white);
+  --text-color: var(--gray-900);
+
+  /*---Buttons---*/
+  --alter-btn-bg: var(--white);
+  --alter-btn-color: var(--gray-900);
+  --alter-btn-border-color: var(--gray-200);
+  --alter-btn-bg-hover: var(--gray-100);
+  --alter-btn-shadow-focus: var(--gray-100);
+
+  --input-bg: var(--gray-50);
+  --input-border: var(--gray-300);
+  --input-color: var(--gray-900);
+}
+
+:root.dark {
+  --bg-color: var(--gray-900);
+  --text-color: var(--white);
+
+  /*---Buttons---*/
+  --alter-btn-bg: var(--gray-800);
+  --alter-btn-color: var(--white);
+  --alter-btn-border-color: var(--gray-600);
+  --alter-btn-bg-hover: var(--gray-700);
+  --alter-btn-shadow-focus: var(--gray-700);
+
+  --input-bg: var(--gray-700);
+  --input-border: var(--gray-600);
+  --input-color: var(--white);
 }
 
 header div,
@@ -46,22 +82,26 @@ header div {
 
 #toggle-theme {
   padding: 10px !important;
-  background-color: transparent;
-  border: 1px solid var(--gray-200);
+  background-color: var(--alter-btn-bg);
+  color: var(--alter-btn-color);
+  border: 1px solid var(--alter-btn-border-color);
 }
 
 #toggle-theme:hover,
 #toggle-theme:focus {
-  background-color: var(--gray-100);
+  background-color: var(--alter-btn-bg-hover);
 }
 
 #toggle-theme:focus {
-  box-shadow: 0 0 0 4px var(--gray-100);
+  box-shadow: 0 0 0 4px var(--alter-btn-shadow-focus);
 }
 
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
   -webkit-tap-highlight-color: transparent;
   font-family: "Inter", sans-serif;
+  transition: all .3s ease-in-out;
 }
 
 form {
@@ -80,14 +120,15 @@ form {
 .inputs input {
   width: 100%;
   padding: 12px 16px;
-  background-color: var(--gray-50);
-  border: 1px solid var(--gray-300);
+  background-color: var(--input-bg);
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 125%;
+  line-height: 17.5px;
   outline: none;
 }
 

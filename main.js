@@ -6,6 +6,8 @@ const state = {
   darkMode: false,
 };
 
+document.documentElement.classList.add("light");
+
 generateForm.onsubmit = (event) => {
   event.preventDefault();
 
@@ -19,10 +21,21 @@ generateForm.onsubmit = (event) => {
 
 toggleThemeBtn.onclick = () => {
   state.darkMode = !state.darkMode;
+  toggleTheme();
   let theme = state.darkMode ? "Light" : "Dark";
   toggleThemeBtn.textContent = theme;
-}
+};
 
 function generateRandomNumber(max, min) {
   return Math.floor(min + Math.random() * (max - min + 1));
+}
+
+function toggleTheme() {
+  if (state.darkMode) {
+    document.documentElement.classList.remove("light");
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+  }
 }
